@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+    "name": "cometsにカスタムボタン追加するくん",
+    "version": "1.0",
+    "description": "cometsにカスタムボタンを追加します。",
+    "content_scripts": [
+        {
+            "matches": ["https://comets.nabettu.com/*"],
+            "js": ["content.js"],
+            "run_at": "document_start"
+        }
+    ]
+}
