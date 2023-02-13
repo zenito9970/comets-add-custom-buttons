@@ -91,6 +91,20 @@
         }
     }
 
+    function setupEnterKeyTextSubmit() {
+        const inputField = document.getElementById("js_inputText");
+        const submitButton = document.getElementById("js_submitBtn");
+
+        let composing = false;
+        inputField.addEventListener("compositionstart", () => composing = true, false);
+        inputField.addEventListener("compositionend", () => composing = false, false);
+        inputField.addEventListener("keypress", e => {
+            if (e.key !== "Enter") return;
+            if (composing) return;
+            submitButton.click();
+        }, false);
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
         const root = document.getElementById("js_comment");
         const div = createElementFromHtml(`<div id="${prefix}-area"></div>`);
@@ -102,5 +116,6 @@
 
         reloadButtonsPanel();
         reloadSettingsPanel();
+        setupEnterKeyTextSubmit();
     }, false);
 })();
