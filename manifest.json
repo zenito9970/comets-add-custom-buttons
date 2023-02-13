@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "cometsにカスタムボタン追加するくん",
-    "version": "1.0",
+    "version": "2.0",
     "description": "cometsにカスタムボタンを追加します。",
     "content_scripts": [
         {
